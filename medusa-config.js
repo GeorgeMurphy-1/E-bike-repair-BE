@@ -2,16 +2,19 @@ const dotenv = require("dotenv");
 
 //Database connection details for production on digital ocean: Digital ocean
 // provides connection details in seperate parts referrence :https://docs.medusajs.com/deployments/server/deploying-on-digital-ocean#changes-to-medusa-configjs
-const DB_USERNAME = process.env.DB_USERNAME;
+const DB_USERNAME = process.env.DB_USERNAME ;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = process.env.DB_HOST;
 const DB_PORT = process.env.DB_PORT;
 const DB_DATABASE = process.env.DB_DATABASE;
 
 
-const DATABASE_URL =
+const DATABASE_URL = process.env.NODE_ENV == "development" ? "postgres://postgres:Meesh25!@localhost/medusa-twWv":
   `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
+
+
+  
 
 let ENV_FILE_NAME = "";
 switch (process.env.NODE_ENV) {
@@ -77,11 +80,11 @@ const modules = {
 const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
-  admin_cors: process.env.ADMIN_CORS,
-  store_cors: process.env.STORE_CORS,
-  database_extra: { ssl: { rejectUnauthorized: false } },
+  admin_cors: process.env.ADMIN_CORS || "http://localhost:7001",
+  store_cors: process.env.STORE_CORS || "http://localhost:8000",
+  database_extra: process.env.NODE_ENV == "production" ? { ssl: { rejectUnauthorized: false } } : {},
   database_logging: ["error", "query"],
-  database_url: process.env.DATABASE_URL,
+  database_url: DATABASE_URL,
   redis_url: process.env.REDIS_URL,
   redis_prefix: "e-bike-repair",
   redis_options: {
