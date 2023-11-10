@@ -9206,9 +9206,9 @@ medusa-payment-manual@^1.0.24:
   integrity sha512-VcQJuuE86J+ePPmZPVp0961Gkjfvu9v/xII9jM5uOH2CsuMsLI3G8QOjDBxn+kiy+hiQFXD1ZoWDDuuFY/Wt8A==
 
 medusa-payment-stripe@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/medusa-payment-stripe/-/medusa-payment-stripe-6.0.5.tgz#f4ac99dc4a491d6f8bca9d204846a437d18feecb"
-  integrity sha512-9lzvrgOaGJJ12cexaEwBgmz3/+c21ADolmpg89XvCjLWYEWfMl7GPvb7bPI6z+t7ZZM094eg+976nJ8Ofqqi0g==
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/medusa-payment-stripe/-/medusa-payment-stripe-6.0.6.tgz#31c66ed7087151d3b0cf1fcb3dfc8d59b4751b5c"
+  integrity sha512-/dg/IvQt4D5xMQWZJpMJlzY+cw3a8KY9+fBwjPFb6jp3f39SDl0VP32SfwJ3gFyek7ygOcQGorlNsVFwvxImUQ==
   dependencies:
     body-parser "^1.19.0"
     express "^4.17.1"
